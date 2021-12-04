@@ -19,7 +19,7 @@ impl Point {
     }
 
     // Moves somewhere inbetween two points. How close you are to the second point is controlled by `r`
-    pub fn step(&mut self, p: Point, r: f32) {
+    pub fn jump(&mut self, p: Point, r: f32) {
         let dx = p.0 - self.0;
         let dy = p.1 - self.1;
 
@@ -32,7 +32,7 @@ impl Point {
 pub struct Fractal {
     pub vertices: Vec<Point>,
     pub path: Vec<(Point, Point)>,
-    pub step_size: f32,
+    pub jump_size: f32,
     pub render_vertices: bool,
     pub render_points: bool,
 }
@@ -43,7 +43,7 @@ impl Fractal {
         Fractal {
             vertices: vec![],
             path: vec![],
-            step_size: 0.5,
+            jump_size: 0.5,
             render_vertices: true,
             render_points: true,
         }
@@ -54,15 +54,22 @@ impl Fractal {
         self.vertices.push(p);
     }
 
-    // Calculates the step size that would generate the best looking fractals, most of the time
-    pub fn set_optimal_step(&mut self) {
+    // Calculates the jump size that would generate the best looking fractals, most of the time
+    pub fn set_optimal_jump(&mut self) {
         let n = self.vertices.len() as f32;
-        self.step_size = n / (n + 3.0);
+        self.jump_size = n / (n + 3.0);
     }
 
-    // Increases or decreases the step size
-    pub fn add_step(&mut self, change: f32) {
-        self.step_size = round_to(self.step_size + change, 2.0);
+    // Increases or decreases the jump size
+    pub fn add_jump(&mut self, change: f32) {
+        self.jump_size = round_to(self.jump_size + change, 2.0);
+        self.constrain_jump();
+    }
+
+    // Constrains the jump to a reasonable amount
+    pub fn constrain_jump(&mut self) {
+        if self.jump_size < 0.0 { self.jump_size = 0.0 }
+        if self.jump_size > 1.0 { self.jump_size = 1.0 }
     }
 
     // Generates `iters` points in the fractal
@@ -74,7 +81,7 @@ impl Fractal {
     
         for _ in 0..iters {
             let target = &self.vertices[rng.gen_range(0..self.vertices.len())];
-            tracer.step(*target, self.step_size);
+            tracer.jump(*target, self.jump_size);
             self.path.push((tracer, *target));
         }
     }
