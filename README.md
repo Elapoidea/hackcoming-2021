@@ -39,13 +39,15 @@ For example, recommended settings: `cargo run 500 500 100000 0.01`
 ### Controls
 * Number keys -> Change fractal slot
 * Enter       -> Generate selected fractal
-* Up / Down   -> Increase or decrease step size
-* Space       -> Sets the optimal step size for the fractal
+* Up / Down   -> Increase or decrease jump size
+* Space       -> Sets the optimal jump size for the fractal
 * C           -> Clear current fractal
 * Comma       -> Change vertex visibility
 * Period      -> Change fractal visibility
 * Left click  -> Add vertex on cursor
 * Right click -> Remove vertex on cursor
+
+You can also iteract with the bars on top to change slot and jump size
 
 ### Showcase
 Me creating a Christmas tree. This is by no means the only thing you can create using this.
