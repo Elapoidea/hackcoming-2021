@@ -1,5 +1,5 @@
 ## Inspiration
-I think fractals are really cool. They're algorithms are often fairly simple as well. Perfect for my first hackathon!
+I think fractals are really cool. Thier algorithms are often fairly simple as well. Perfect for my first hackathon!
 
 ## What it does
 Uses chaos game / chaos theory to build fractal structures. When applied in the right way, and if you have a bit of creativity, it creates christmas trees.
