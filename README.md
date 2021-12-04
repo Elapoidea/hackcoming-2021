@@ -51,4 +51,4 @@ You can also iteract with the bars on top to change slot and jump size
 
 ### Showcase
 Me creating a Christmas tree. This is by no means the only thing you can create using this.
-![showcase](./assets/showcase.gif)
+![showcase](./assets/showcase_.gif)
