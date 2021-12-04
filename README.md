@@ -1,8 +1,8 @@
 ## Inspiration
-I think fractals are really cool. Thier algorithms are often fairly simple as well. Perfect for my first hackathon!
+I think fractals are really cool. Their algorithms are often fairly simple as well. Perfect for my first hackathon!
 
 ## What it does
-Uses chaos game / chaos theory to build fractal structures. When applied in the right way, and if you have a bit of creativity, it creates christmas trees.
+Uses chaos game / chaos theory to build fractal structures. When applied in the right way, and if you have a bit of creativity, it creates Christmas trees.
 
 [The wikipedia page](https://en.wikipedia.org/wiki/Chaos_game)
 
@@ -47,7 +47,7 @@ For example, recommended settings: `cargo run 500 500 100000 0.01`
 * Left click  -> Add vertex on cursor
 * Right click -> Remove vertex on cursor
 
-You can also iteract with the bars on top to change slot and jump size
+You can also interact with the bars on top to change slot and jump size
 
 ### Showcase
 Me creating a Christmas tree. This is by no means the only thing you can create using this.
